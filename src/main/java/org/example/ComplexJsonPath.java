@@ -3,6 +3,8 @@ package org.example;
 import files.Payload;
 import io.restassured.path.json.JsonPath;
 
+import java.sql.SQLOutput;
+
 public class ComplexJsonPath {
 
     public static void main(String[] args) {
@@ -41,20 +43,33 @@ public class ComplexJsonPath {
             System.out.println(CourseName + " : " + coursePrice);
         }
 
-        System.out.println("Print number of copies sold by RPA");
+        System.out.println("Print number of copies sold by Cypress");
 
         for(int i=0; i<count; i++)
         {
             String courseTitle = js.get("courses["+i+"].title");
-            if (courseTitle.equalsIgnoreCase("RPA"))
+            if (courseTitle.equalsIgnoreCase("Cypress"))
             {
                 int copies = js.get("courses["+i+"].copies");
-                System.out.println("RPA : " + copies);
+                System.out.println("Cypress : " + copies);
                 break;
             }
 
         }
 
+        System.out.println("Sum of all course prizes matches");
+        int totalPrice =0;
+        for(int i=0; i<count; i++)
+        {
+            String Title = js.getString("courses["+i+"].title");
+            int price = js.getInt("courses["+i+"].price");
+            int copies = js.getInt("courses["+i+"].copies");
+            int amount = price*copies;
+            totalPrice += amount;
+            System.out.println(Title + ":" + amount);
+        }
+
+        System.out.println("TotalPrice:" + totalPrice);
     }
 
 
