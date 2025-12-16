@@ -2,6 +2,7 @@ package org.example;
 
 import files.Payload;
 import io.restassured.path.json.JsonPath;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Sumvalidation {
@@ -22,5 +23,16 @@ public class Sumvalidation {
         System.out.println(Title + ":" + amount);
     }
     System.out.println("Total Amount :" + totalAmount);
+
+    int purchasedAmount = js.get("dashboard.purchaseAmount");
+    System.out.println("Purchased Amount :" + purchasedAmount);
+//    if (purchasedAmount == totalAmount)
+//    {
+//        System.out.println("Amount purchased is same as total amount calculated");
+//    }
+//    else {
+//        System.out.println("Amount purchased is not same as total amount calculated");
+//    }
+    Assert.assertEquals(totalAmount, purchasedAmount);
 }
 }
