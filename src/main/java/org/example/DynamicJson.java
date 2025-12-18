@@ -72,7 +72,7 @@ public class DynamicJson {
                 .post("/Library/DeleteBook.php")
                 .then()
                 .log().all()
-                .assertThat().statusCode(
+                .assertThat().statusCode(200);
 
     }
 
