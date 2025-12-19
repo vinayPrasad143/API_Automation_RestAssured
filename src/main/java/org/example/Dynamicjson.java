@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class DynamicJson {
+public class Dynamicjson {
 
     @Test(priority = 0)
     public void addBook()

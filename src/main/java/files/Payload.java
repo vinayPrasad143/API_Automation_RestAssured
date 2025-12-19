@@ -82,4 +82,15 @@ public class Payload {
                 "}";
         return payload;
     }
+    public static String addBook(String isbn, String aisle, String author)
+    {
+        String payload = "{\n" +
+                "\n" +
+                "\"name\":\"Learn Java Selenium Automation\",\n" +
+                "\"isbn\":\""+isbn+"\",\n" +
+                "\"aisle\":\""+aisle+"\",\n" +
+                "\"author\":\""+author+"\"\n" +
+                "}";
+        return payload;
+    }
 }
