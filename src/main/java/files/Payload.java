@@ -93,4 +93,15 @@ public class Payload {
                 "}";
         return payload;
     }
+
+    public static String deleteBook(String bookId)
+    {
+        String payload = "{\n" +
+                " \n" +
+                "\"ID\" : \""+bookId+"\"\n" +
+                " \n" +
+                "} ";
+        return payload;
+    }
+
 }
