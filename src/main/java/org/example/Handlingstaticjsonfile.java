@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 
-public class HandlingStaticJsonFile {
+public class Handlingstaticjsonfile {
 
     @Test
     public void staticJson() throws IOException {
